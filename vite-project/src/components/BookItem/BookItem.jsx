@@ -1,8 +1,8 @@
 import Checkbox from '../Checkbox/Checkbox';
 import './BookItem.css';
 export default function BookItem({ book, onToggleRead, onDelete }) {
-  const colors = ['#4f6b52', '#6b4f52', '#524f6b', '#6b5e4f', '#4f6b6a'];
-  const bgColor = colors[book.id % colors.length];
+const colors = ['#4f6b52', '#6b4f52', '#524f6b', '#6b5e4f', '#4f6b6a'];
+const bgColor = colors[book.id % colors.length];
 
   return (
     <div className="book-row" data-id={book.id}>

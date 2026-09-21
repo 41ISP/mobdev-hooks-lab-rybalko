@@ -6,7 +6,7 @@ export default function FilterChip({ showOnlyUnread, onToggle }) {
         type="checkbox" 
         id="filterCheckbox" 
         checked={showOnlyUnread}
-        onChange={() => onToggle(prev => !prev)} 
+        onChange={() => onToggle(o => !o)} 
       />
       <label htmlFor="filterCheckbox">
         <span className="dot"></span>

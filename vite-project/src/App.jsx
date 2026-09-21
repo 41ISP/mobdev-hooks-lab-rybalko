@@ -3,8 +3,14 @@ import ShelfScreen from './pages/ShelfScreen/ShelfScreen';
 
 function App() {
   const [books, setBooks] = useState([
-    { id: 1, title: 'Клара и Солнце', author: 'Кадзуо Исигуро', read: true },
-    { id: 2, title: '1984', author: 'Дж. Оруэлл', read: false },
+    { id: 1,
+      title: 'Клара и Солнце',
+      author: 'Кадзуо Исигуро',
+      read: true },
+    { id: 2,
+      title: '1984',
+      author: 'Дж. Оруэлл',
+      read: false },
   ]);
   const [showOnlyUnread, setShowOnlyUnread] = useState(false);
 
@@ -15,23 +21,23 @@ function App() {
       author: 'Неизвестный автор',
       read: false,
     };
-    setBooks((prev) => [...prev, newBook]);
+    setBooks((books) => [...books, newBook]);
   };
 
   const handleToggleRead = (id) => {
-    setBooks((prev) =>
-      prev.map((book) =>
-        book.id === id ? { ...book, read: !book.read } : book
+    setBooks((books) =>
+      books.map((book) =>
+      book.id === id ? { ...book, read: !book.read } : book
       )
     );
   };
 
   const handleDeleteBook = (id) => {
-    setBooks((prev) => prev.filter((book) => book.id !== id));
+    setBooks((books) => books.filter((book) => book.id !== id));
   };
 
   const handleToggleFilter = () => {
-    setShowOnlyUnread((prev) => !prev);
+    setShowOnlyUnread((books) => !books);
   };
 
   return (
